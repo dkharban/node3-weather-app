@@ -7,6 +7,7 @@ const viewsPath=path.join(__dirname,'../templates/views')
 const partialpaths=path.join(__dirname,'../templates/partials')
 const geoCode=require('./utils/geoCode');
 const weather=require('./utils/weather');
+const port = process.env.PORT || 4000
 //const weather=require('./weather')
 console.log(directory)
 app.use(express.static(directory))
@@ -75,6 +76,6 @@ app.get('/help',(req,res)=>{
                 })
                 })
                      
-app.listen(4000,()=>{
+app.listen(port,()=>{
     console.log('server started')
 })
