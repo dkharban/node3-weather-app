@@ -31,8 +31,8 @@ response.json().then((data) =>{
     
     }
     else{
-        message1.textContent=data.temperature
-        message2.textContent=data.rain
+        message1.textContent='weather summary:'+data.summary
+        message2.textContent='Current Forecast:'+ data.temperature +' in ' + data.location
     }
 })
 });

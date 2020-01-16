@@ -12,10 +12,12 @@ const weather= (latitude,longitude,callback)=>{
     }
     else{
         
-        callback(undefined,{ 
-           temperature:body.currently.temperature,
-           rain:body.currently.precipProbability
-        })
+        callback(undefined,{
+            summary: body.daily.data[0].summary,
+            temperature: 'It is currently '+body.currently.temperature +'celsius with chances of rain: '+body.currently.precipProbability*100 +'%'
+        }
+           
+        )
        
     }
 })

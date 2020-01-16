@@ -46,7 +46,7 @@ app.get('/help',(req,res)=>{
                     })  
                   }
                   
-                  weather(latitude,longitude,(weatherError,{temperature,rain}={})=>{
+                  weather(latitude,longitude,(weatherError,{temperature,summary}={})=>{
                   if(weatherError)
                   {
                      return res.send({
@@ -55,7 +55,7 @@ app.get('/help',(req,res)=>{
                   }
                      res.send({
                         temperature:temperature,
-                        rain:rain,
+                        summary:summary,
                         location:location,
                         address:req.query.address
                         
